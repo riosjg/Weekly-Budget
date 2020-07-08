@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types'
 import Error from './Error'
 
 const Question = ({ setBudget, setRemaining, setShowQuestion}) => {
@@ -6,7 +7,7 @@ const Question = ({ setBudget, setRemaining, setShowQuestion}) => {
     const [error, setError] = useState(false);
 
     const defineBudget = e => {
-        setCount(e.target.value);
+        setCount( parseInt(e.target.value) );
     }
 
     const submitBudget = e => {
@@ -46,6 +47,12 @@ const Question = ({ setBudget, setRemaining, setShowQuestion}) => {
         </form>
         </>
      );
+}
+
+Question.propTypes = {
+    setBudget: PropTypes.func.isRequired,
+    setRemaining: PropTypes.func.isRequired,
+    setShowQuestion: PropTypes.func.isRequired
 }
  
 export default Question;
