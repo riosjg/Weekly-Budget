@@ -50,6 +50,7 @@ function App() {
                 <Form
                   addNewExpense={setExpense}
                   setCreateExpense={setCreateExpense}
+                  remaining={remaining}
                 />
               </div>
               <div className="one-half column">
